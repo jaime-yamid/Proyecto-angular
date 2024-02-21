@@ -1,0 +1,38 @@
+<p>persona works!</p>
+
+<h2 class="title">{{titulo}}</h2>
+<span>{{edad}}</span>
+
+@if (ocultar){
+<p class= " parrafo"> Parrafo  La EAAB – ESP dispone diferentes canales presenciales y virtuales para realizar el pago de las facturas de servicio con la Empresa.  Conózcalas y haga uso de ellas:   
+    Convenio de recaudo con los Bancos Davivienda, Itaú, Colpatria, GNB Sudameris, AV Villas, Bogotá, Occidente, Caja Social y Citi.
+    Redes o cajeros de Servibanca, Redeban y ATH.
+    Puntos de recaudo autorizados de los bancos Davivienda, Bogotá y AV Villas.
+    Oficinas de bancos Sudameris e Itaú, para pago en efectivo o con cheque de gerencia.
+    Red CADE.
+    Pago con tarjeta de crédito en la oficina del Acueducto ubicada en la avenida calle 24 #37-15
+    Cerca de 14 mil corresponsales de Scotiabank que puede consultar en la página del banco.
+    También puede consultar más de 24 mil corresponsales bancarios a través del siguiente mapa. 
+    Para encontrar el más cercano seleccione la opción de localidad, luego escoja el banco de su preferencia y entonces podrá navegar en el mapa para ubicar el punto más próximo a su ubicación.</p>
+
+}@else {
+    <h4>No muestra el Parrafo</h4>
+}
+<h4>Nuevo parrafo mostrado </h4>
+
+
+
+<hr>
+<app-tabla 
+[usuarios] = "users"
+[tituloTabla]= "titulotabla"
+></app-tabla>
+<h3>este es el contador </h3>
+<!-- input son cuadrados los corchetes -->
+<app-contador (incrementarValor)="recibirContador($event)"></app-contador> 
+este es el valor = {{contador}}
+
+<!-- recibiendo lo del componente y voy a guardarlo en una variable-->
+
+<!-- los output son entre parentesis -->
+<!-- la funcion esta recibiendo un evento por eso event -->

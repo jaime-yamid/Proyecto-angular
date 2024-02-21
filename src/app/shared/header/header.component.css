@@ -1,0 +1,43 @@
+.header{
+    background-color: #021E3D;
+    border-radius: 0 0 15px 15px;   /*bordecito*/
+    display: flex;  /*organizar todo lo que esta adentro del header*/
+    justify-content: center;  /*para centrar*/
+    height: 40px;
+    padding: 5px 10%;  /*relleno del cuadrito */
+}
+.header .logo {
+    cursor: pointer;
+}
+.header .logo img {   /*logo de la imagen*/
+    height: 80px;
+    width:  auto;
+    transition: all 0.3s;  /*la transicion para que no sea tan brusco*/
+}
+.header .logo img:hover{  /* logo imagen cuando crece a escala*/
+    transform: scale(1.2);
+}
+
+header .nav-links{      /* de la viñeta quitar esos punticos*/
+    list-style: none;
+}
+.header .nav-links li{
+    display: inline-block;  /*orden de esa lista sera en linea*/ 
+    padding: 0 20px;   /*espaciados*/
+    transition: all 0.3s;  /*la transicion para que no sea tan brusco*/
+}
+
+.header .nav-links li:hover{    /*le da la animacion*/
+    transform: scale(1.4);
+}
+.header .nav-links a {
+    font-size: 20px;
+    color: #F1EFF1;
+    text-decoration: none;
+   
+}
+
+.header .nav-links li a:hover{ /* es cando pasa el raton por eso es hover*/
+     color:#CF6A8C;
+    }
+
