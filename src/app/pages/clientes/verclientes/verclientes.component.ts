@@ -14,13 +14,13 @@ export class VerclientesComponent implements OnInit {
 ngOnInit(): void {
   this.misClientes.push({
     id: 1,
-    nombre: "wewe",
-    direccion: "wewe",
-    telefono: "string",
-    tipoDocumento: "string",
-    numerodeDocumento: "wewe",
+    nombre: "Juan Gabrile",
+    direccion: "cra 10#10",
+    telefono: "30155888998",
+    tipoDocumento: "Cedula",
+    numerodeDocumento: "10311789444",
     estado:true,
-    eamil:"string"
+    eamil:"luis@gmail.com"
 
 
   },

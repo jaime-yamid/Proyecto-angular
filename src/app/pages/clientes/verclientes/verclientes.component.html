@@ -7,12 +7,31 @@
         ...
       </tr>
       <tr>
-        ...
+        
       </tr>
       <tr>
-        <th scope="row">3</th>
-        <td colspan="2" class="table-active">Larry the Bird</td>
-        <td></td>
+        <th scope="row">id</th>
+        <td colspan="2" class="table-active"> Nombre</td>
+        <td colspan="3" class="table-active"> Direccion </td>
+        <td colspan="4" class="table-active"> Telefono </td>
+        <td colspan="5" class="table-active"> TipoDocumento </td>
+        <td colspan="6" class="table-active"> NumerodeDocumento </td>
+        <td colspan="7" class="table-active"> Estado </td>
+        <td colspan="8" class="table-active"> Email </td>
+        <td colspan="9" class="table-active"> Acciones </td>
       </tr>
+      @for (clientes of misClientes; track $index) {
+    <tr>
+        <th scope="row">{{clientes.id}}</th>
+        <td colspan="2" class="table-active">{{clientes.nombre}}</td>
+        <td colspan="3" class="table-active">{{clientes.direccion}}</td>
+        <td colspan="4" class="table-active">{{clientes.telefono}}</td>
+        <td colspan="5" class="table-active">{{clientes.tipoDocumento}}</td>
+        <td colspan="6" class="table-active">{{clientes.numerodeDocumento}}</td>
+        <td colspan="7" class="table-active">{{clientes.estado}}</td>
+        <td colspan="8" class="table-active">{{clientes.eamil}}</td>
+        <td colspan="9"  a class="btn btn-secondary bd-info">EDITAR</td>
+     </tr>
+    }
     </tbody>
   </table>
