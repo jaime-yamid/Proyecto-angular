@@ -29,7 +29,7 @@ export const routes: Routes = [
 },
 
 {
-    path: 'Clientes',  // cyal es el path
+    path: 'cliente',  // cyal es el path
     title: 'clientes potenciales',// el nombre de la pagina
     component: VerclientesComponent,   //componente como tal
 }
