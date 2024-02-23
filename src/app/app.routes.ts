@@ -3,6 +3,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { VerclientesComponent } from './pages/clientes/verclientes/verclientes.component';
 export const routes: Routes = [
     {
         path: '#',  // cyal es el path
@@ -25,5 +26,11 @@ export const routes: Routes = [
     path: 'contacto',  // cyal es el path
     title: 'Contactos',// el nombre de la pagina
     component: ContactoComponent,   //componente como tal
+},
+
+{
+    path: 'Clientes',  // cyal es el path
+    title: 'clientes potenciales',// el nombre de la pagina
+    component: VerclientesComponent,   //componente como tal
 }
 ];

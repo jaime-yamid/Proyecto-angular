@@ -1,5 +1,6 @@
+import { formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
@@ -9,14 +10,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
-  contactoForm =  new FormGroup ({
-
-      nombre: new FormControl(''),    
-      email: new FormControl(''), 
-      mensaje: new FormControl('')             /*colocamos los nombres de los fomrularios tiene un grupo de controles cada control es el input*/
-  });
-
-  enviarContanto(){
-    console.log('enviar fomrulario');
-  }
+ ContactoForm = new FormGroup ({
+   nombre: new FormControl('',Validators.required),  /* se establece el atributo name , quiere decir el */
+   email:new  FormControl ('',[Validators.email,Validators.required]),
+   mensaje:new  FormControl ('Mensaje por defecto'),                       /*   formulario tiene un grupo de controles  cada input es un control*/
+ });
+ enviarcontacto(){
+  console.log('Envia formulario',this.ContactoForm)
+ }
 }

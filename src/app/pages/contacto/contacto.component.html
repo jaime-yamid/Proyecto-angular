@@ -1,22 +1,26 @@
 <div class="contenido">
-
-
-
-
-<form>
-    <h1>Formulario de Contacto</h1>
-    <h2>Contactos para obtener informacion</h2>
-    <div class="input-group">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" formControlName="nombre " required>
-
-    <label for="email">Correo Electronico:</label>
-    <input type="email" id="email" formControlName="email" required>
-
-    <label for="mensaje">Mensaje:</label>
-    <input type="mensaje" id="mensaje" formControlName="mensaje" required>
-<input class="btn" type="submit" value="Enviar">
-    <!-- <button type="submit">Enviar Mensaje</button> -->
- </div>
-</form>
-</div>
+    <form [formGroup]="ContactoForm" (submit)="enviarcontacto()">
+      <h1>Formulario de Contacto</h1>
+      <h2>Contactos para obtener información</h2>
+      <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" placeholder="Nombre">
+  
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Correo Electrónico">
+  
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" formControlName="mensaje" placeholder="Mensaje"></textarea>
+  
+        <input class="btn" type="submit">
+      </div>
+    </form>
+  
+  
+  <!-- <p>nombre: {{ContactoForm.value.nombre}}</p>
+  <p>email: {{ContactoForm.value.email}}</p>
+  <p>mensaje: {{ContactoForm.value.mensaje}}</p> -->
+  </div>
+  
+  
+  <!-- [disabled]="!ContactoForm.valid" value="Enviar"> -->
