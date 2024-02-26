@@ -21,6 +21,12 @@ export class AgregarclientesComponent {
     email: new  FormControl('',[Validators.email,Validators.required]),
   });
 
+
+
+
+
+
+  
   @Output () mostrarClientes: EventEmitter<Cliente> = new EventEmitter<Cliente>(); //ngular que se utiliza para marcar propiedades de salida en un componente.
 
   crearcliente (){
