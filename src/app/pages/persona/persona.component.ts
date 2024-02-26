@@ -26,7 +26,7 @@ export class PersonaComponent {
   {id: 5, name: 'sarah2'},
   ] ;
 
-  recibirContador(numero: number) { // recbii un dato un numero
+  recibirContador(numero: number) { // recbii un dato del componnete un numero
   this.contador = numero;
   
 }

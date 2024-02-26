@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-verclientes',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule,AgregarclientesComponent],
   templateUrl: './verclientes.component.html',
   styleUrl: './verclientes.component.css'
 })
@@ -41,7 +41,7 @@ ngOnInit(): void {
 
   //interaccion de clientes//
   this.misClientes.forEach((cliente)=> {
-    console.log('Mis cliuentes', cliente);
+    console.log('Mis clientes', cliente);
   });
 
   }
@@ -52,7 +52,15 @@ ngOnInit(): void {
 /* llamo a mis clientes recorro ese arreglo filter filtra la varibale se llama clinete  del cluiete
 le filtro el id  debe ser diferente al id que le estoy enviando como parametro */
     console.log("Eliminar",this.misClientes);
-  }
+}
+
+
+recibirData (nuevoCliente: Cliente) {
+  this.misClientes.push(nuevoCliente);
+  console.log('Datos recibidos del hijo:', nuevoCliente);
+}
+
+
 
 
   FormularioModal():void {

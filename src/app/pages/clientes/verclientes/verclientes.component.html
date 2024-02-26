@@ -54,10 +54,12 @@
             Actualizar</a>
 
         </td>
+
      </tr>
     }
     </tbody>
   </table>
+  <app-agregarclientes (mostrarClientes)="recibirData($event)"></app-agregarclientes>
   <div class="col-md-auto" style="text-align: right;">  
     <button class="btn btn-primary"  (click)="FormularioModal()" >Agregar</button>
   </div>

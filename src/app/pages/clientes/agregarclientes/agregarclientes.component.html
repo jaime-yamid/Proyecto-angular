@@ -1,13 +1,13 @@
 <div class="contenido">
-    <form  [formGroup]= "clienteform" (submit)="crearcliente()">
+    <form  [formGroup]= "clienteForm" (submit)="crearcliente()">
       <div class="input-group">
         <label for="id">id</label>
         <input 
-        type="number"
-        formControlName="nombre" 
+        type="text"
+        formControlName="id" 
         placeholder="Ingrese el Id del Cliente">
 
-        <label for="Nombre">nombre</label>
+        <label for="nombre">nombre</label>
         <input
         type="text"
         formControlName="nombre" 
@@ -16,7 +16,7 @@
         <label for="Direccion">direccion</label>
         <input
         type="text"
-        formControlName="nombre" 
+        formControlName="direccion" 
         placeholder="Ingrese la Direccion del Cliente">
 
         <label for="Telefono">telefono</label>
@@ -28,7 +28,7 @@
         <label for="Email">email</label>
         <input
         type="text"
-        formControlName="telefono" 
+        formControlName="email" 
         placeholder="Ingrese el Telefono del Cliente">
 
         <label for="tipoDocumento">Tipo de documento</label>
@@ -37,19 +37,15 @@
         formControlName="tipoDocumento" 
         placeholder="Ingrese el tipo de documento">
 
-        <label for="numeroDocumento">Numero de Documento</label>
+        <label for="numerodeDocumento">Numero de Documento</label>
         <input
         type="text"
-        formControlName="numeroDocumento" 
+        formControlName="numerodeDocumento" 
         placeholder="Ingrese el numero del documento">
-
-
         <input
         type="checkbox">
-
-
+        <!-- <button type="gSubmit" (click)="crearcliente()">Crearcliente</button> -->
         <input class="btn" type="submit">
-        
       </div>
     </form>
   
