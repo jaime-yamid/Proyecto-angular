@@ -4,6 +4,7 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { VerclientesComponent } from './pages/clientes/verclientes/verclientes.component';
+import { AgregarclientesComponent } from './pages/clientes/agregarclientes/agregarclientes.component';
 export const routes: Routes = [
     {
         path: '#',  // cyal es el path
@@ -32,5 +33,10 @@ export const routes: Routes = [
     path: 'cliente',  // cyal es el path
     title: 'clientes potenciales',// el nombre de la pagina
     component: VerclientesComponent,   //componente como tal
+},
+{
+    path: 'add-clientes',  // cyal es el path
+    title: 'Agregar clientes',// el nombre de la pagina
+    component: AgregarclientesComponent,   //componente como tal
 }
 ];

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../../../core/interfaces/cliente';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { AgregarclientesComponent } from '../agregarclientes/agregarclientes.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-verclientes',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './verclientes.component.html',
   styleUrl: './verclientes.component.css'
 })
@@ -20,7 +24,7 @@ ngOnInit(): void {
     tipoDocumento: "Cedula",
     numerodeDocumento: "10311789444",
     estado:true,
-    eamil:"luis@gmail.com"
+    email:"luis@gmail.com"
 
 
   },
@@ -32,14 +36,31 @@ ngOnInit(): void {
     tipoDocumento: "string",
     numerodeDocumento: "wewe",
     estado:true,
-    eamil:"string"
+    email:"string"
   }) ;
 
   //interaccion de clientes//
   this.misClientes.forEach((cliente)=> {
     console.log('Mis cliuentes', cliente);
   });
-    
+
+  }
+  eliminarClientes(idcliente : number): void {
+   this.misClientes = this.misClientes.filter (
+    (cliente)=> cliente.id !== idcliente
+   )
+/* llamo a mis clientes recorro ese arreglo filter filtra la varibale se llama clinete  del cluiete
+le filtro el id  debe ser diferente al id que le estoy enviando como parametro */
+    console.log("Eliminar",this.misClientes);
+  }
+
+
+  FormularioModal():void {
+   
+Swal.fire({
+  title: "llenar formulario",
+  
+})
   }
 }
 

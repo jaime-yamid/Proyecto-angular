@@ -1,1 +1,55 @@
-<p>agregarclientes works!</p>
+<div class="contenido">
+    <form  [formGroup]= "clienteform" (submit)="crearcliente()">
+      <div class="input-group">
+        <label for="id">id</label>
+        <input 
+        type="number"
+        formControlName="nombre" 
+        placeholder="Ingrese el Id del Cliente">
+
+        <label for="Nombre">nombre</label>
+        <input
+        type="text"
+        formControlName="nombre" 
+        placeholder="Ingrese el Nombre del Cliente">
+
+        <label for="Direccion">direccion</label>
+        <input
+        type="text"
+        formControlName="nombre" 
+        placeholder="Ingrese la Direccion del Cliente">
+
+        <label for="Telefono">telefono</label>
+        <input
+        type="text"
+        formControlName="telefono" 
+        placeholder="Ingrese el Telefono del Cliente">
+
+        <label for="Email">email</label>
+        <input
+        type="text"
+        formControlName="telefono" 
+        placeholder="Ingrese el Telefono del Cliente">
+
+        <label for="tipoDocumento">Tipo de documento</label>
+        <input
+        type="text"
+        formControlName="tipoDocumento" 
+        placeholder="Ingrese el tipo de documento">
+
+        <label for="numeroDocumento">Numero de Documento</label>
+        <input
+        type="text"
+        formControlName="numeroDocumento" 
+        placeholder="Ingrese el numero del documento">
+
+
+        <input
+        type="checkbox">
+
+
+        <input class="btn" type="submit">
+        
+      </div>
+    </form>
+  

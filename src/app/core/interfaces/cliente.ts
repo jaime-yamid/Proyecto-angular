@@ -6,6 +6,6 @@ export interface Cliente {
     tipoDocumento: string;
     numerodeDocumento: string;
     estado:boolean;
-    eamil:string;
+    email:string;
     
 }
