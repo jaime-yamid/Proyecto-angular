@@ -1,51 +1,40 @@
 <div class="contenido">
-    <form  [formGroup]= "clienteForm" (submit)="crearcliente()">
-      <div class="input-group">
-        <label for="id">id</label>
-        <input 
-        type="text"
-        formControlName="id" 
-        placeholder="Ingrese el Id del Cliente">
+  <form [formGroup]="clienteForm" (submit)="crearcliente(); cerrarF()" class="row g-3">
+      <div class="col-md-6">
+          <!-- Primera Columna -->
+          <label for="id" class="form-label">ID</label>
+          <input type="text" formControlName="id" class="form-control" placeholder="Ingrese el ID del Cliente">
 
-        <label for="nombre">nombre</label>
-        <input
-        type="text"
-        formControlName="nombre" 
-        placeholder="Ingrese el Nombre del Cliente">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" formControlName="nombre" class="form-control" placeholder="Ingrese el Nombre del Cliente">
 
-        <label for="Direccion">direccion</label>
-        <input
-        type="text"
-        formControlName="direccion" 
-        placeholder="Ingrese la Direccion del Cliente">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input type="text" formControlName="direccion" class="form-control" placeholder="Ingrese la Dirección del Cliente">
 
-        <label for="Telefono">telefono</label>
-        <input
-        type="text"
-        formControlName="telefono" 
-        placeholder="Ingrese el Telefono del Cliente">
-
-        <label for="Email">email</label>
-        <input
-        type="text"
-        formControlName="email" 
-        placeholder="Ingrese el Telefono del Cliente">
-
-        <label for="tipoDocumento">Tipo de documento</label>
-        <input
-        type="text"
-        formControlName="tipoDocumento" 
-        placeholder="Ingrese el tipo de documento">
-
-        <label for="numerodeDocumento">Numero de Documento</label>
-        <input
-        type="text"
-        formControlName="numerodeDocumento" 
-        placeholder="Ingrese el numero del documento">
-        <input
-        type="checkbox">
-        <!-- <button type="gSubmit" (click)="crearcliente()">Crearcliente</button> -->
-        <input class="btn" type="submit">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="text" formControlName="telefono" class="form-control" placeholder="Ingrese el Teléfono del Cliente">
       </div>
-    </form>
-  
+      
+      <div class="col-md-6">
+          <!-- Segunda Columna -->
+          <label for="email" class="form-label">Email</label>
+          <input type="text" formControlName="email" class="form-control" placeholder="Ingrese el Email del Cliente">
+
+          <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+          <input type="text" formControlName="tipoDocumento" class="form-control" placeholder="Ingrese el Tipo de Documento">
+
+          <label for="numerodeDocumento" class="form-label">Número de Documento</label>
+          <input type="text" formControlName="numerodeDocumento" class="form-control" placeholder="Ingrese el Número de Documento">
+
+          <div class="form-check">
+              <input type="checkbox" class="form-check-input">
+              <label class="form-check-label">Aceptar términos y condiciones</label>
+          </div>
+      </div>
+
+      <div class="col-12 mt-3">
+          <!-- Botón de envío -->
+          <button type="submit" class="btn btn-primary">Crear Cliente</button>
+      </div>
+  </form>
+</div>

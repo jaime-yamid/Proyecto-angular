@@ -21,14 +21,8 @@ export class AgregarclientesComponent {
     email: new  FormControl('',[Validators.email,Validators.required]),
   });
 
-
-
-
-
-
-  
   @Output () mostrarClientes: EventEmitter<Cliente> = new EventEmitter<Cliente>(); //ngular que se utiliza para marcar propiedades de salida en un componente.
-
+@Output () cerrarform:EventEmitter<boolean> = new EventEmitter<boolean>;
   crearcliente (){
     const data = this.clienteForm.value;
     const nuevoCliente: Cliente ={
@@ -43,17 +37,12 @@ export class AgregarclientesComponent {
     };
      this.mostrarClientes.emit(nuevoCliente);
    console.log('datos eminitdoa al padre', nuevoCliente);
+ 
   }
-  
-  // AGREGANDO MODAL
+  cerrarF() {
+  this.cerrarform.emit(false);
+  }
 
-  modalAbrir:boolean= false;
-funcionAbrir(){
-  this.modalAbrir=true;
-}
-funcionCerrar(){
-  this.modalAbrir=false;
-}
 
 
 }

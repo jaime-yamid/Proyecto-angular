@@ -72,5 +72,10 @@ funcionAbrir(){
 funcionCerrar(){
   this.modalAbrir=false;
 }
+
+cerrarboton(evento:boolean){
+  this.modalAbrir=false;
+}
+
 }
 

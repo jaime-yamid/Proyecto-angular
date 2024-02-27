@@ -65,8 +65,8 @@
   </div>
 
   <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
-    
-    <app-agregarclientes (mostrarClientes)="recibirData($event)"></app-agregarclientes>
+
+    <app-agregarclientes (cerrarform)="cerrarboton($event)" (mostrarClientes)="recibirData($event)"></app-agregarclientes>
   
   </app-modal>
 
