@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { TablaComponent } from '../../components/tabla/tabla.component';
 import { ContadorComponent } from "../../components/contador/contador.component";
+import { ModalComponent } from "../../components/modal/modal.component";
 
 @Component({
     selector: 'app-persona',
     standalone: true,
     templateUrl: './persona.component.html',
     styleUrl: './persona.component.css',
-    imports: [TablaComponent, ContadorComponent]
+    imports: [TablaComponent, ContadorComponent, ModalComponent]
 })
 
 
@@ -30,4 +31,15 @@ export class PersonaComponent {
   this.contador = numero;
   
 }
+//no tienen que ser del mismo nombre son componentes diferentes - si deben ser similares de manera se pueda 
+// reconocer cuando los vea 
+
+modalAbrir:boolean= false;
+funcionAbrir(){
+  this.modalAbrir=true;
+}
+funcionCerrar(){
+  this.modalAbrir=false;
+}
+
 }

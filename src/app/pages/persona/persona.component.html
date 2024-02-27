@@ -32,6 +32,18 @@
 <app-contador (incrementarValor)="recibirContador($event)"></app-contador> 
 este es el valor = {{contador}}
 
+<button (click)="funcionAbrir()">abriendo el modal</button>
+<app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
+
+    <div class="card">
+        <img src=".\assets\images\Logo.png" class="card-img-top w-25 h-auto" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Título de la Tarjeta</h5>
+          <p class="card-text">Este es un ejemplo de texto para llenar el contenido de la tarjeta. Puedes colocar cualquier tipo de contenido aquí.</p>
+          <a href="#" class="btn btn-primary">Botón de Acción</a>
+        </div>
+      </div>
+</app-modal>
 <!-- recibiendo lo del componente y voy a guardarlo en una variable-->
 
 <!-- los output son entre parentesis -->

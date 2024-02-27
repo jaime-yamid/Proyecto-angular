@@ -4,13 +4,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AgregarclientesComponent } from '../agregarclientes/agregarclientes.component';
 import Swal from 'sweetalert2';
+import { ModalComponent } from "../../../components/modal/modal.component";
 
 @Component({
-  selector: 'app-verclientes',
-  standalone: true,
-  imports: [FontAwesomeModule,AgregarclientesComponent],
-  templateUrl: './verclientes.component.html',
-  styleUrl: './verclientes.component.css'
+    selector: 'app-verclientes',
+    standalone: true,
+    templateUrl: './verclientes.component.html',
+    styleUrl: './verclientes.component.css',
+    imports: [FontAwesomeModule, AgregarclientesComponent, ModalComponent]
 })
 export class VerclientesComponent implements OnInit {
 
