@@ -43,9 +43,17 @@ export class AgregarclientesComponent {
     };
      this.mostrarClientes.emit(nuevoCliente);
    console.log('datos eminitdoa al padre', nuevoCliente);
-    
-   
   }
   
+  // AGREGANDO MODAL
+
+  modalAbrir:boolean= false;
+funcionAbrir(){
+  this.modalAbrir=true;
+}
+funcionCerrar(){
+  this.modalAbrir=false;
+}
+
 
 }

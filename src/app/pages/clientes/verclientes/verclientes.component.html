@@ -61,10 +61,11 @@
   </table>
   
   <div class="col-md-auto" style="text-align: right;">  
-    <button class="btn btn-primary"  (click)="FormularioModal()" >Agregar</button>
+    <button class="btn btn-primary"  (click)="funcionAbrir()" >Agregar</button>
   </div>
 
-  <app-modal>
+  <app-modal [aModal]="modalAbrir" (cModalevent)="funcionCerrar()">
+    
     <app-agregarclientes (mostrarClientes)="recibirData($event)"></app-agregarclientes>
   
   </app-modal>

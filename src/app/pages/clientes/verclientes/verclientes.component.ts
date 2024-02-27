@@ -63,13 +63,14 @@ recibirData (nuevoCliente: Cliente) {
 
 
 
+  // AGREGANDO MODAL
 
-  FormularioModal():void {
-   
-Swal.fire({
-  title: "llenar formulario",
-  
-})
-  }
+  modalAbrir:boolean= false;
+funcionAbrir(){
+  this.modalAbrir=true;
+}
+funcionCerrar(){
+  this.modalAbrir=false;
+}
 }
 
