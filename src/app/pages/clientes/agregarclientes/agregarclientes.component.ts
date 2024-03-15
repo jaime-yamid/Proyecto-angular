@@ -26,12 +26,12 @@ export class AgregarclientesComponent {
   crearcliente (){
     const data = this.clienteForm.value;
     const nuevoCliente: Cliente ={
-      id: Number(data.id),
+      _id: Number(data.id),
       nombre: data.nombre || "",
       direccion: String(data.direccion),
       telefono: String(data.telefono),
       tipoDocumento: String(data.tipoDocumento),
-      numerodeDocumento: String(data.numerodeDocumento),
+      numeroDocumento: String(data.numerodeDocumento),
       estado: Boolean(data.estado),
       email: String(data.email),
     };

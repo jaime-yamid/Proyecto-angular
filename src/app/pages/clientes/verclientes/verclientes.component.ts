@@ -3,8 +3,8 @@ import { Cliente } from '../../../core/interfaces/cliente';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AgregarclientesComponent } from '../agregarclientes/agregarclientes.component';
-import Swal from 'sweetalert2';
 import { ModalComponent } from "../../../components/modal/modal.component";
+import { ClientesService } from '../../../services/clientes/clientes.service';
 
 @Component({
     selector: 'app-verclientes',
@@ -16,39 +16,52 @@ import { ModalComponent } from "../../../components/modal/modal.component";
 export class VerclientesComponent implements OnInit {
 
   misClientes: Cliente []=[];
+
+  // en el constructor creo o traigo servicio que cree
+  constructor( private clienteService: ClientesService) {}
+  
+
+  
 ngOnInit(): void {
-  this.misClientes.push({
-    id: 1,
-    nombre: "Juan Gabrile",
-    direccion: "cra 10#10",
-    telefono: "30155888998",
-    tipoDocumento: "Cedula",
-    numerodeDocumento: "10311789444",
-    estado:true,
-    email:"luis@gmail.com"
+  // this.misClientes.push({
+  //   id: 1,
+  //   nombre: "Juan Gabrile",
+  //   direccion: "cra 10#10",
+  //   telefono: "30155888998",
+  //   tipoDocumento: "Cedula",
+  //   numerodeDocumento: "10311789444",
+  //   estado:true,
+  //   email:"luis@gmail.com"
 
 
-  },
-  {
-  id: 2,
-    nombre: "wewe",
-    direccion: "wewe",
-    telefono: "string",
-    tipoDocumento: "string",
-    numerodeDocumento: "wewe",
-    estado:true,
-    email:"string"
-  }) ;
+  // },
+  // {
+  // id: 2,
+  //   nombre: "wewe",
+  //   direccion: "wewe",
+  //   telefono: "string",
+  //   tipoDocumento: "string",
+  //   numerodeDocumento: "wewe",
+  //   estado:true,
+  //   email:"string"
+  // }) ;
 
-  //interaccion de clientes//
-  this.misClientes.forEach((cliente)=> {
-    console.log('Mis clientes', cliente);
+ // interaccion de clientes//
+ this.misClientes.forEach((cliente)=> {
+   console.log('Mis clientes', cliente);
   });
+
+  // esta pendiente de los clinetes con ese
+this.clienteService.getClientes().subscribe((data: any)=> {
+console.log(data);
+this.misClientes = data.clientes;
+
+});
 
   }
   eliminarClientes(idcliente : number): void {
    this.misClientes = this.misClientes.filter (
-    (cliente)=> cliente.id !== idcliente
+    (cliente)=> cliente._id !== idcliente
    )
 /* llamo a mis clientes recorro ese arreglo filter filtra la varibale se llama clinete  del cluiete
 le filtro el id  debe ser diferente al id que le estoy enviando como parametro */

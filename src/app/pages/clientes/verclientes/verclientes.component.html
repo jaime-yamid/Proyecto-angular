@@ -27,12 +27,13 @@
       </tr>
       @for (clientes of misClientes; track $index) {
     <tr>
-        <th scope="row">{{clientes.id}}</th>
+      <!-- numero incrementable es el id el index -->
+        <th scope="row">{{$index}}</th>
         <td colspan="2" class="table-active">{{clientes.nombre}}</td>
         <td colspan="3" class="table-active">{{clientes.direccion}}</td>
         <td colspan="4" class="table-active">{{clientes.telefono}}</td>
         <td colspan="5" class="table-active">{{clientes.tipoDocumento}}</td>
-        <td colspan="6" class="table-active">{{clientes.numerodeDocumento}}</td>
+        <td colspan="6" class="table-active">{{clientes.numeroDocumento}}</td>
         <td colspan="7" class="table-active">{{clientes.estado}}</td>
         <td colspan="8" class="table-active">{{clientes.email}}</td>
         <td colspan="9" class="table-active text-center">
@@ -42,7 +43,7 @@
           </svg>
           
           Editar</a>
-          <a class="btn btn-outline-danger btn-sm m-2" (click)="eliminarClientes(clientes.id)">
+          <a class="btn btn-outline-danger btn-sm m-2" (click)="eliminarClientes(clientes._id)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-1 h-1">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
