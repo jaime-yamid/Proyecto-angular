@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgregarclientesComponent } from '../agregarclientes/agregarclientes.component';
 import { ModalComponent } from "../../../components/modal/modal.component";
 import { ClientesService } from '../../../services/clientes/clientes.service';
+import {  Router } from '@angular/router';
 
 @Component({
     selector: 'app-verclientes',
@@ -18,7 +19,9 @@ export class VerclientesComponent implements OnInit {
   misClientes: Cliente []=[];
 
   // en el constructor creo o traigo servicio que cree
-  constructor( private clienteService: ClientesService) {}
+
+  // voy a llamar otra ruta 
+  constructor( private clienteService: ClientesService, private router: Router) {}
   
 
   
@@ -68,13 +71,15 @@ le filtro el id  debe ser diferente al id que le estoy enviando como parametro *
     console.log("Eliminar",this.misClientes);
 }
 
+// le digo a navigate que quiero ir a add clientes
+//  agregarCLiente() {
+// this.router.navigateByUrl('add-clientes');
+//  }
 
 recibirData (nuevoCliente: Cliente) {
   this.misClientes.push(nuevoCliente);
   console.log('Datos recibidos del hijo:', nuevoCliente);
 }
-
-
 
   // AGREGANDO MODAL
 
