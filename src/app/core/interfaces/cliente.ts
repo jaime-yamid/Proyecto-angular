@@ -1,11 +1,13 @@
 export interface Cliente {
-    id: number;
+    _id: number;
     nombre: string;
     direccion: string;
     telefono: string;
     tipoDocumento: string;
-    numerodeDocumento: string;
+    numeroDocumento: string;
     estado:boolean;
-    eamil:string;
+    email:string;
     
 }
+
+//
