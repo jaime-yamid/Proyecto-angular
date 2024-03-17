@@ -5,6 +5,7 @@ import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { VerclientesComponent } from './pages/clientes/verclientes/verclientes.component';
 import { AgregarclientesComponent } from './pages/clientes/agregarclientes/agregarclientes.component';
+import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
 export const routes: Routes = [
     {
         path: '#',  // cyal es el path
@@ -38,5 +39,11 @@ export const routes: Routes = [
     path: 'add-clientes',  // cyal es el path
     title: 'Agregar clientes',// el nombre de la pagina
     component: AgregarclientesComponent,   //componente como tal
+},
+
+{
+    path: 'login',  // cyal es el path o ruta
+    title: 'Autenticacion',// el nombre de la pagina
+    component: AutenticacionComponent,   //componente como tal
 }
 ];
