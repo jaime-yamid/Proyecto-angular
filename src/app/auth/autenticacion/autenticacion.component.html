@@ -25,7 +25,7 @@
                              class="form-control" 
                              formControlName="login"
                              placeholder="Introduce tu usuario">
-                             @if(login?.invalid && login?.touched){
+                             @if(loginData?.invalid && loginData?.touched){
                             <div>
                                 <small class="text-danger">
                              EL nombre de usuario es obligatorio</small>
@@ -34,9 +34,24 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="contraseña">Contraseña:</label>
-                            <input type="password" class="form-control" id="contraseña" placeholder="Introduce tu contraseña">
-                        </div>
+                            <label for="password">Contraseña:</label>
+                            <input type="password"
+                             class="form-control" 
+                             formControlName="contraseña" 
+                             placeholder="Introduce tu contraseña"/>
+                           
+                        @if (password?.invalid &&  password?.touched){
+                            <div>
+                                <small clas="text-danger">
+                                    El password es obligatorio 
+                                </small>
+                           
+                        @if (password?.hasError("minlenght")) {
+                            <small class="text-danger">
+                                El password no tiene la longitud minima
+                            </small>
+                        } </div>}
+                    </div>
                         <div class="form-group ">
                             <a hrof=" " class="small"> ¿Olvidaste tu contraseña? </a>
                         </div>
