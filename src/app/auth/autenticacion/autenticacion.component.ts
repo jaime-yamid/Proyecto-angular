@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class AutenticacionComponent implements OnInit{
 login: any;
+
   
   constructor(private formBuilder: FormBuilder){
 
@@ -20,7 +21,7 @@ login: any;
     // aqui digo en donde el campo de validatos que con un correo se autentica 
     this.loginForm = this.formBuilder.group({
       login:['',[Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(5)],
+      password:['',[Validators.required, Validators.minLength(5)]],
     });
 
   }

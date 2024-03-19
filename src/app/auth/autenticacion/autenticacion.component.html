@@ -37,27 +37,26 @@
                             <label for="password">Contraseña:</label>
                             <input type="password"
                              class="form-control" 
-                             formControlName="contraseña" 
+                             formControlName="password" 
                              placeholder="Introduce tu contraseña"/>
                            
-                        @if (password?.invalid &&  password?.touched){
-                            <div>
-                                <small clas="text-danger">
-                                    El password es obligatorio 
-                                </small>
-                           
-                        @if (password?.hasError("minlenght")) {
-                            <small class="text-danger">
-                                El password no tiene la longitud minima
-                            </small>
-                        } </div>}
+                             @if (password?.invalid && password?.touched){
+                             <div>
+                                 <small class="text-danger">El password es obligatorio</small>
+                             </div>
+                         <!-- Mensaje de error si el campo de contraseña no cumple con la longitud mínima -->
+                         @if (password?.hasError("minlength")){
+                             <div>
+                                 <small class="text-danger">El password no tiene la longitud mínima</small>
+                             </div>
+                            }}
                     </div>
                         <div class="form-group ">
                             <a hrof=" " class="small"> ¿Olvidaste tu contraseña? </a>
                         </div>
 
 
-                        <button type="submit" class="btn boton-iniciar-sesion btn-block mt-3">Iniciar Sesión</button> <!-- Aplicamos la clase personalizada para el botón -->
+                        <button type="submit" class="btn boton-iniciar-sesion btn-block mt-3" [disabled]="!loginForm.valid">Iniciar Sesión</button> <!-- Aplicamos la clase personalizada para el botón -->
                     </form>
                 </div>
             </div>
