@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cliente } from '../../../core/interfaces/cliente';
-import { CLienteModel } from '../../../core/interfaces/models/cliente.model';
+import { CLienteModel } from '../../../core/models/cliente.model';
 import { ClientesService } from '../../../services/clientes/clientes.service';
 
 @Component({

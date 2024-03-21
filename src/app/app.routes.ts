@@ -8,7 +8,7 @@ import { AgregarclientesComponent } from './pages/clientes/agregarclientes/agreg
 import { AutenticacionComponent } from './auth/autenticacion/autenticacion.component';
 export const routes: Routes = [
     {
-        path: '#',  // cyal es el path
+        path: '',  // cyal es el path
           title: 'inicio',// el nombre de la pagina
           component: InicioComponent,   //componente como tal
 },

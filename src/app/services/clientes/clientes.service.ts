@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { CLienteModel } from '../../core/interfaces/models/cliente.model';
+import { CLienteModel } from '../../core/models/cliente.model';
 // constante clogan dde mi clase
 const base_url= environment.base_url;
 @Injectable({

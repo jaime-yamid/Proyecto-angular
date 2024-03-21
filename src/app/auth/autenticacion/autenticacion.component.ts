@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autenticacion',
@@ -9,10 +11,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './autenticacion.component.css'
 })
 export class AutenticacionComponent implements OnInit{
-login: any;
+
 
   
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, private aService : AutenticacionService, private ruta: Router){
 
   }
   loginForm!: FormGroup;
@@ -25,7 +27,7 @@ login: any;
     });
 
   }
-  get loginData(){
+  get login(){
     return this.loginForm.get('login');
   
   }
@@ -33,8 +35,24 @@ get password(){
   return this.loginForm.get('password');
 }
  
-realizologin(){
-  console.log('realizo el login', this.loginForm)
+realizarlogin(){
+if(this.loginForm.invalid){
+  return;
+
+}
+// agarro la informacion la envio en la data es la constante 
+  const data=this.loginForm.value;
+  this.aService.login(data).subscribe({
+    next:(response:any ) => {
+      if(response && response.usuario){
+        this.ruta.navigateByUrl('')
+      }
+    },
+    error:(error:any) => {
+      console.log(error.msg);
+    },
+    
+  });
 }
 
 
