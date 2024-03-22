@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AutenticacionService } from '../../services/autenticacion/autenticacion.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-autenticacion',
@@ -11,10 +12,14 @@ import { Router } from '@angular/router';
   styleUrl: './autenticacion.component.css'
 })
 export class AutenticacionComponent implements OnInit{
+  router: any;
 
 
   
-  constructor(private formBuilder: FormBuilder, private aService : AutenticacionService, private ruta: Router){
+  constructor(private formBuilder: FormBuilder,
+     private autenticacionservice: AutenticacionService ,
+     private aService : AutenticacionService, 
+     private ruta: Router){
 
   }
   loginForm!: FormGroup;
@@ -42,16 +47,32 @@ if(this.loginForm.invalid){
 }
 // agarro la informacion la envio en la data es la constante 
   const data=this.loginForm.value;
-  this.aService.login(data).subscribe({
-    next:(response:any ) => {
-      if(response && response.usuario){
-        this.ruta.navigateByUrl('')
+  // this.aService.login(data).subscribe({
+  //   next:(response:any ) => {
+  //     if(response && response.usuario){
+  //       this.ruta.navigateByUrl('')
+  //     }
+  //   },
+  //   error:(error:any) => {
+  //     console.log(error.msg);
+  //   },
+    
+  // });
+
+this.autenticacionservice.login(data).subscribe({
+  next:(resp: any) => {
+    if ( resp && resp.usuario){
+      const {nombre,login,email} =  resp.usuario;
+      Swal.fire({
+        html: `Bienvenido ${nombre}`,
+      }).then(()=> {
+        this.ruta.navigateByUrl('');        
+      });
       }
     },
-    error:(error:any) => {
-      console.log(error.msg);
-    },
-    
+    error:(error: any) => {
+      console.error(error.error.msg);
+    }
   });
 }
 
